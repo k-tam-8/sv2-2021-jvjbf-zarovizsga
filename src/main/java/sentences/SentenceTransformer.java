@@ -7,25 +7,25 @@ import java.util.List;
 public class SentenceTransformer {
 
     public String shortenSentence(String sentence) {
-        String result = sentence;
+        StringBuilder result = new StringBuilder();
 
-        isStartWithCapital(sentence);
-        isEndWithPunct(sentence);
+        checkStartWithCapital(sentence);
+        checkEndWithPunct(sentence);
 
         String[] words = sentence.split(" ");
         if (words.length > 4) {
-            result = words[0] + " ... " + words[words.length - 1];
+            return result.append(words[0]).append(" ... ").append(words[words.length - 1]).toString();
         }
-        return result;
+        return sentence;
     }
 
-    private void isStartWithCapital(String sentence) {
+    private void checkStartWithCapital(String sentence) {
         if (sentence.charAt(0) != sentence.toUpperCase().charAt(0)) {
             throw new IllegalArgumentException("Must start with capital letter!");
         }
     }
 
-    private void isEndWithPunct(String sentence) {
+    private void checkEndWithPunct(String sentence) {
         List<Character> puncts = Arrays.asList('?', '!', '.');
         if (!puncts.contains(sentence.charAt(sentence.length() - 1))) {
             throw new IllegalArgumentException("Must end with . ! or ?");

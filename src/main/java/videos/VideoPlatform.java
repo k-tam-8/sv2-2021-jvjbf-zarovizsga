@@ -21,10 +21,10 @@ public class VideoPlatform {
         } catch (IOException e) {
             throw new IllegalArgumentException("Cannot open file for read!");
         }
-        addChannelsFromFile(readIn);
+        addChannelsFromList(readIn);
     }
 
-    private void addChannelsFromFile(List<String> readIn){
+    private void addChannelsFromList(List<String> readIn){
         for (int i = 1; i < readIn.size(); i++) {
             String[] stringArr = readIn.get(i).split(";");
             channels.add(new Channel(stringArr[0], Integer.parseInt(stringArr[1]), Integer.parseInt(stringArr[2])));
