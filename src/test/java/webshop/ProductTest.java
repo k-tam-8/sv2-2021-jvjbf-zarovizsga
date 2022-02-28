@@ -1,4 +1,3 @@
-/*
 package webshop;
 
 import org.junit.jupiter.api.Test;
@@ -18,4 +17,4 @@ class ProductTest {
         assertEquals(5, product.getStock());
     }
 
-}*/
+}

@@ -1,18 +1,19 @@
 package videos;
 
 public class Channel {
-    private String channel;
+
+    private String channelName;
     private int subscriptions;
     private int number_of_videos;
 
     public Channel(String channel, int subscriptions, int number_of_videos) {
-        this.channel = channel;
+        this.channelName = channel;
         this.subscriptions = subscriptions;
         this.number_of_videos = number_of_videos;
     }
 
-    public String getChannel() {
-        return channel;
+    public String getChannelName() {
+        return channelName;
     }
 
     public int getSubscriptions() {
